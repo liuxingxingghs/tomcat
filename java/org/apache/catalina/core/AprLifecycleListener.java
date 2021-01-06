@@ -118,7 +118,7 @@ public class AprLifecycleListener
      */
     @Override
     public void lifecycleEvent(LifecycleEvent event) {
-
+        //如果是before_init 那么执行这个事件
         if (Lifecycle.BEFORE_INIT_EVENT.equals(event.getType())) {
             synchronized (lock) {
                 init();

@@ -52,6 +52,8 @@ public class SetPropertiesRule extends Rule {
     }
 
     /**
+     *
+     * 设置属性对象
      * Process the beginning of this element.
      *
      * @param namespace the namespace URI of the matching element, or an

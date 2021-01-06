@@ -299,6 +299,7 @@ public final class Bootstrap {
         if (log.isDebugEnabled()) {
             log.debug("Calling startup class " + method);
         }
+        //反射调用 Catalina load
         method.invoke(catalinaDaemon, param);
     }
 
@@ -403,6 +404,7 @@ public final class Bootstrap {
         paramValues[0] = Boolean.valueOf(await);
         Method method =
             catalinaDaemon.getClass().getMethod("setAwait", paramTypes);
+        //org.apache.catalina.startup.Catalina 设置await paramValues = true
         method.invoke(catalinaDaemon, paramValues);
     }
 
@@ -433,7 +435,7 @@ public final class Bootstrap {
      * @param args Command line arguments to be processed
      */
     public static void main(String args[]) {
-
+        args = new String[]{"start"};
         synchronized (daemonLock) {
             if (daemon == null) {
                 // Don't set daemon until init() has completed

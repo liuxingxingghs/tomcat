@@ -1549,6 +1549,7 @@ public class HostConfig implements LifecycleListener {
 
     /**
      * Process a "start" event for this Host.
+     * 启动
      */
     public void start() {
 

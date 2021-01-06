@@ -70,10 +70,11 @@ public class GlobalResourcesLifecycleListener implements LifecycleListener {
      */
     @Override
     public void lifecycleEvent(LifecycleEvent event) {
-
+         //如果是start 事件
         if (Lifecycle.START_EVENT.equals(event.getType())) {
             component = event.getLifecycle();
             createMBeans();
+            //销毁事件
         } else if (Lifecycle.STOP_EVENT.equals(event.getType())) {
             destroyMBeans();
             component = null;

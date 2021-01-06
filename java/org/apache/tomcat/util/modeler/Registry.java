@@ -649,7 +649,7 @@ public class Registry implements RegistryMBean, MBeanRegistration {
                 }
                 getMBeanServer().unregisterMBean(oname);
             }
-
+            //注册监控bean
             getMBeanServer().registerMBean(mbean, oname);
         } catch (Exception ex) {
             log.error(sm.getString("registry.registerError", oname), ex);

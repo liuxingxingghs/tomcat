@@ -283,6 +283,8 @@ public class ContextConfig implements LifecycleListener {
 
 
     /**
+     *
+     * 配置处理事件
      * Process events for an associated Context.
      *
      * @param event The lifecycle event that has occurred

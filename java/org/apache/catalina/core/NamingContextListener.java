@@ -218,7 +218,9 @@ public class NamingContextListener implements LifecycleListener, PropertyChangeL
             namingResources = ((Context) container).getNamingResources();
             token = ((Context) container).getNamingToken();
         } else if (container instanceof Server) {
+            //加载配置时 有Digester 进行创建
             namingResources = ((Server) container).getGlobalNamingResources();
+            //token 也是
             token = ((Server) container).getNamingToken();
         } else {
             return;

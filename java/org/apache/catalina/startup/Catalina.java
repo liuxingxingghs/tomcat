@@ -301,6 +301,10 @@ public class Catalina {
         this.useNaming = useNaming;
     }
 
+    /**
+     * 设置等待
+     * @param b
+     */
     public void setAwait(boolean b) {
         await = b;
     }

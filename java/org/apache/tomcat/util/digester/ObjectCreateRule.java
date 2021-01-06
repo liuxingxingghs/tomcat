@@ -81,6 +81,8 @@ public class ObjectCreateRule extends Rule {
 
 
     /**
+     *
+     * 创建对象 如果配置中存在属性那么就用配置的 要是不存在那么就用默认的
      * Process the beginning of this element.
      *
      * @param namespace the namespace URI of the matching element, or an
@@ -101,6 +103,7 @@ public class ObjectCreateRule extends Rule {
         }
 
         // Instantiate the new object and push it on the context stack
+        //创建类
         Class<?> clazz = digester.getClassLoader().loadClass(realClassName);
         Object instance = clazz.getConstructor().newInstance();
         digester.push(instance);
@@ -116,6 +119,7 @@ public class ObjectCreateRule extends Rule {
 
 
     /**
+     * 获取classname 如果存在那么就取配置文件中的地址 否则就用默认的地址
      * Return the actual class name of the class to be instantiated.
      * @param attributes The attribute list for this element
      * @return the class name
@@ -134,6 +138,8 @@ public class ObjectCreateRule extends Rule {
 
 
     /**
+     *
+     * 在结束后将创建的对象移除
      * Process the end of this element.
      *
      * @param namespace the namespace URI of the matching element, or an

@@ -115,6 +115,8 @@ public class SetNextRule extends Rule {
     }
 
     /**
+     *
+     * 对象赋值 从栈中获取 0 1 两个对象 peek 这个方法只返回数据不会删除数据
      * Process the end of this element.
      *
      * @param namespace the namespace URI of the matching element, or an

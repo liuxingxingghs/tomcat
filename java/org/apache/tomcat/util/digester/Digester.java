@@ -1270,6 +1270,7 @@ public class Digester extends DefaultHandler2 {
 
         // Fire "begin" events for all relevant rules
         List<Rule> rules = getRules().match(namespaceURI, match);
+        //为了只取一次 在开始解析的时候放进去 在解析完成后从栈中取出 缓存数据的作用节约时间
         matches.push(rules);
         if ((rules != null) && (rules.size() > 0)) {
             for (Rule value : rules) {

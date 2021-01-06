@@ -864,7 +864,10 @@ public abstract class ContainerBase extends LifecycleMBeanBase
         super.initInternal();
     }
 
-
+    /**
+     * 创建配置线程
+     * @param threads
+     */
     private void reconfigureStartStopExecutor(int threads) {
         if (threads == 1) {
             // Use a fake executor
